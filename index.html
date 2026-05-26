@@ -4,73 +4,103 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>Maniac Mansion Mania – Downloads</title>
+<title>Maniac Mansion Mania – Ressourcen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Cabin+Sketch:wght@700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #1a1a2e;
-    --card: #16213e;
-    --accent: #0f3460;
-    --highlight: #e94560;
-    --text: #eee;
-    --muted: #aab;
-    --link: #53c0f0;
-    --link-hover: #7fdbff;
+    --bg: #1e221e;
+    --card: rgba(34, 32, 30, 0.9);
+    --card-border: rgba(96, 147, 76, 0.15);
+    --accent: #60934c;
+    --accent-dim: rgba(96, 147, 76, 0.3);
+    --highlight: #60934c;
+    --text: rgba(255, 255, 255, 0.7);
+    --text-bright: #fff;
+    --muted: rgba(255, 255, 255, 0.4);
+    --link: #60934c;
+    --link-hover: #8cbf72;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Roboto Mono', monospace;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.5;
+    line-height: 1.6;
     padding: 2rem 1rem;
+    font-size: 14px;
   }
   h1 {
     text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: .3rem;
-    color: var(--highlight);
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: .2rem;
+    color: var(--text-bright);
+    letter-spacing: 1px;
   }
   .subtitle {
     text-align: center;
+    font-family: 'Amatic SC', cursive;
     color: var(--muted);
     margin-bottom: 2rem;
-    font-size: .9rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
   .toc {
-    max-width: 700px;
+    max-width: 750px;
     margin: 0 auto 2.5rem;
     background: var(--card);
-    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
     padding: 1.2rem 1.5rem;
   }
-  .toc h2 { font-size: 1rem; margin-bottom: .6rem; color: var(--highlight); }
+  .toc h2 {
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: .6rem;
+    color: var(--text-bright);
+  }
   .toc ul { list-style: none; columns: 2; gap: 1rem; }
-  .toc li { margin-bottom: .3rem; }
-  .toc a { color: var(--link); text-decoration: none; font-size: .9rem; }
+  .toc li { margin-bottom: .35rem; }
+  .toc a { color: var(--link); text-decoration: none; font-size: .85rem; }
   .toc a:hover { color: var(--link-hover); text-decoration: underline; }
+  .toc .count, .dl-list .date-inline { color: var(--muted); font-size: .75rem; margin-left: .3rem; }
   .category {
-    max-width: 700px;
-    margin: 0 auto 2rem;
+    max-width: 750px;
+    margin: 0 auto 1.5rem;
     background: var(--card);
-    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
     padding: 1.2rem 1.5rem;
   }
   .category h2 {
+    font-family: 'Cabin Sketch', cursive;
     font-size: 1.15rem;
-    color: var(--highlight);
-    border-bottom: 1px solid var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-bright);
+    border-bottom: 1px solid var(--accent-dim);
     padding-bottom: .4rem;
     margin-bottom: .8rem;
   }
   .category h2 span {
-    font-size: .8rem;
+    font-family: 'Roboto Mono', monospace;
+    font-size: .75rem;
     color: var(--muted);
     font-weight: normal;
+    text-transform: none;
   }
   .dl-list { list-style: none; }
   .dl-list li {
-    padding: .35rem 0;
-    border-bottom: 1px solid rgba(255,255,255,.05);
+    padding: .4rem 0;
+    border-bottom: 1px solid rgba(255,255,255,.04);
   }
   .dl-list li:last-child { border-bottom: none; }
   .dl-list a {
@@ -81,24 +111,25 @@
   .dl-list a:hover { color: var(--link-hover); text-decoration: underline; }
   .badge {
     display: inline-block;
-    font-size: .65rem;
-    padding: .1rem .4rem;
+    font-size: .6rem;
+    padding: .15rem .4rem;
     border-radius: 3px;
     margin-left: .4rem;
     vertical-align: middle;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
+    letter-spacing: .5px;
   }
-  .badge-gh { background: #238636; color: #fff; }
-  .badge-web { background: #0f3460; color: #aac; }
+  .badge-gh { background: rgba(96, 147, 76, 0.25); color: var(--accent); border: 1px solid var(--accent-dim); }
+  .badge-web { background: rgba(255,255,255,0.05); color: var(--muted); border: 1px solid rgba(255,255,255,0.1); }
   .sep { color: var(--muted); margin: 0 .2rem; }
   .sp-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: .9rem;
+    font-size: .85rem;
   }
   .sp-table tr {
-    border-bottom: 1px solid rgba(255,255,255,.05);
+    border-bottom: 1px solid rgba(255,255,255,.04);
   }
   .sp-table tr:last-child { border-bottom: none; }
   .sp-table td {
@@ -116,16 +147,18 @@
   }
   .sp-table td a:hover { color: var(--link-hover); text-decoration: underline; }
   .sp-table .date {
-    color: #7a8;
-    font-size: .75rem;
+    color: var(--muted);
+    font-size: .7rem;
     padding-left: .5rem;
   }
   details summary {
     cursor: pointer;
+    font-family: 'Cabin Sketch', cursive;
     font-size: 1.15rem;
     font-weight: 700;
-    color: var(--highlight);
-    border-bottom: 1px solid var(--accent);
+    text-transform: uppercase;
+    color: var(--text-bright);
+    border-bottom: 1px solid var(--accent-dim);
     padding-bottom: .4rem;
     margin-bottom: .8rem;
     list-style: none;
@@ -135,16 +168,19 @@
     content: '\25B6';
     display: inline-block;
     margin-right: .5rem;
-    font-size: .75rem;
+    font-size: .65rem;
+    color: var(--accent);
     transition: transform .2s;
   }
   details[open] > summary::before { transform: rotate(90deg); }
   details summary span {
-    font-size: .8rem;
+    font-family: 'Roboto Mono', monospace;
+    font-size: .75rem;
     color: var(--muted);
     font-weight: normal;
+    text-transform: none;
   }
-  .sub-details { margin-top: 1rem; border-top: 1px solid var(--accent); padding-top: .8rem; }
+  .sub-details { margin-top: 1rem; border-top: 1px solid var(--accent-dim); padding-top: .8rem; }
   .sub-details summary {
     font-size: .95rem;
     color: var(--muted);
@@ -153,49 +189,68 @@
     margin-bottom: .5rem;
   }
   .search-wrap {
-    max-width: 700px;
+    max-width: 750px;
     margin: 0 auto 1.5rem;
   }
   #search {
     width: 100%;
-    padding: .65rem 1rem;
-    font-size: .95rem;
-    border: 1px solid var(--accent);
-    border-radius: 8px;
+    padding: .6rem 1rem;
+    font-family: 'Roboto Mono', monospace;
+    font-size: .85rem;
+    border: 1px solid var(--accent-dim);
+    border-radius: 4px;
     background: var(--card);
     color: var(--text);
     outline: none;
+    transition: border-color .2s;
   }
-  #search:focus { border-color: var(--highlight); }
+  #search:focus { border-color: var(--accent); }
   #search::placeholder { color: var(--muted); }
   .back-top {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: var(--highlight);
+    background: var(--accent);
     color: #fff;
     padding: .5rem 1rem;
-    border-radius: 8px;
+    border-radius: 4px;
     text-decoration: none;
-    font-size: .85rem;
-    font-weight: 600;
+    font-family: 'Roboto Mono', monospace;
+    font-size: .75rem;
+    font-weight: 500;
     opacity: 0;
     pointer-events: none;
     transition: opacity .3s;
     z-index: 100;
   }
   .back-top.visible { opacity: 1; pointer-events: auto; }
-  .back-top:hover { background: #c73652; }
+  .back-top:hover { background: #4a7a3a; }
+  footer {
+    max-width: 750px;
+    margin: 3rem auto 1rem;
+    padding: 1.2rem 1.5rem;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    color: var(--muted);
+    font-size: .75rem;
+    line-height: 1.7;
+  }
+  footer strong { color: var(--text-bright); }
+  footer a { color: var(--link); }
+  footer a:hover { color: var(--link-hover); }
   @media (max-width: 600px) {
     .toc ul { columns: 1; }
     body { padding: 1rem .5rem; }
+    h1 { font-size: 1.6rem; }
+    .subtitle { font-size: 1.1rem; }
   }
 </style>
 </head>
 <body>
 
-<h1>Maniac Mansion Mania – Ressourcen</h1>
-<p class="subtitle">Alle Ressourcen-Downloads auf einen Blick</p>
+<h1>Ressourcen</h1>
+<p class="subtitle">Alle Downloads auf einen Blick</p>
 
 <div class="search-wrap">
   <input type="text" id="search" placeholder="Downloads durchsuchen…">
@@ -204,20 +259,20 @@
 <nav class="toc">
   <h2>Kategorien</h2>
   <ul>
-    <li><a href="#sp-aktuell">Aktuelle Starterpacks (AGS 3.6)</a> <span style="color:var(--muted);font-size:.8rem">(15)</span></li>
-    <li><a href="#chars">Charaktere (Sammlungen)</a> <span style="color:var(--muted);font-size:.8rem">(2)</span></li>
-    <li><a href="#chars-erweitert">Charaktere (Einzeln)</a> <span style="color:var(--muted);font-size:.8rem">(71)</span></li>
-    <li><a href="#backgrounds">Backgroundgrafiken</a> <span style="color:var(--muted);font-size:.8rem">(13)</span></li>
-    <li><a href="#grafiken">Grafiken</a> <span style="color:var(--muted);font-size:.8rem">(4)</span></li>
-    <li><a href="#items">Gegenstände</a> <span style="color:var(--muted);font-size:.8rem">(3)</span></li>
-    <li><a href="#sounds">Sounds</a> <span style="color:var(--muted);font-size:.8rem">(2)</span></li>
-    <li><a href="#musik">Musik</a> <span style="color:var(--muted);font-size:.8rem">(5)</span></li>
-    <li><a href="#episoden">Ressourcen nach Episoden</a> <span style="color:var(--muted);font-size:.8rem">(34)</span></li>
-    <li><a href="#gamesources">Gamesources</a> <span style="color:var(--muted);font-size:.8rem">(13)</span></li>
-    <li><a href="#sp-international">Starterpacks International</a> <span style="color:var(--muted);font-size:.8rem">(5)</span></li>
-    <li><a href="#sp-aelter">Ältere Starterpacks</a> <span style="color:var(--muted);font-size:.8rem">(63)</span></li>
-    <li><a href="#audio">Audio</a> <span style="color:var(--muted);font-size:.8rem">(2)</span></li>
-    <li><a href="#tools">Tools &amp; Anleitungen</a> <span style="color:var(--muted);font-size:.8rem">(5)</span></li>
+    <li><a href="#sp-aktuell">Aktuelle Starterpacks (AGS 3.6)</a> <span class="count">(15)</span></li>
+    <li><a href="#chars">Charaktere (Sammlungen)</a> <span class="count">(2)</span></li>
+    <li><a href="#chars-erweitert">Charaktere (Einzeln)</a> <span class="count">(71)</span></li>
+    <li><a href="#backgrounds">Backgroundgrafiken</a> <span class="count">(13)</span></li>
+    <li><a href="#grafiken">Grafiken</a> <span class="count">(4)</span></li>
+    <li><a href="#items">Gegenstände</a> <span class="count">(3)</span></li>
+    <li><a href="#sounds">Sounds</a> <span class="count">(2)</span></li>
+    <li><a href="#musik">Musik</a> <span class="count">(5)</span></li>
+    <li><a href="#episoden">Ressourcen nach Episoden</a> <span class="count">(34)</span></li>
+    <li><a href="#gamesources">Gamesources</a> <span class="count">(13)</span></li>
+    <li><a href="#sp-international">Starterpacks International</a> <span class="count">(5)</span></li>
+    <li><a href="#sp-aelter">Ältere Starterpacks</a> <span class="count">(63)</span></li>
+    <li><a href="#audio">Audio</a> <span class="count">(2)</span></li>
+    <li><a href="#tools">Tools &amp; Anleitungen</a> <span class="count">(5)</span></li>
   </ul>
 </nav>
 
@@ -250,8 +305,8 @@
   <details>
   <summary>Charaktere (Sammlungen) <span>(2)</span></summary>
   <ul class="dl-list">
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/145-verschiedene-charactere-ca-60/file.html">Verschiedene Charactere (ca. 60)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/295-mmm-chars-3008/file.html">Charaktere nach Kategorien (mmm-chars_3008)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/145-verschiedene-charactere-ca-60/file.html">Verschiedene Charactere (ca. 60)</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/295-mmm-chars-3008/file.html">Charaktere nach Kategorien (mmm-chars_3008)</a><span class="date-inline">(2011-11-30)</span></li>
   </ul>
   </details>
 </section>
@@ -263,7 +318,7 @@
   <ul class="dl-list">
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/210-achmed/file.html">Achmed</a></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/216-alfred-ravenberg/file.html">Alfred Ravenberg</a></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/361-altes-muttchen/file.html">Altes Muttchen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/361-altes-muttchen/file.html">Altes Muttchen</a><span class="date-inline">(2007-04-16)</span></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/252-alvin/file.html">Alvin</a></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/239-andy-pantz/file.html">Andy Pantz</a></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/224-antonio-bernoulli-bernards-vater/file.html">Antonio Bernoulli, Bernards Vater</a></li>
@@ -317,7 +372,7 @@
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/248-officer-simpkins/file.html">Officer Simpkins</a></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/249-officer-stanley-furgesion/file.html">Officer Stanley Furgesion</a></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/266-patrick/file.html">Patrick</a></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/365-professor-dilkmore/file.html">Professor Dilkmore</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/365-professor-dilkmore/file.html">Professor Dilkmore</a><span class="date-inline">(2007-04-16)</span></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/233-psycho-bernie/file.html">Psycho Bernie</a></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/207-ranger-frank-wood/file.html">Ranger Frank Wood</a></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/charactere/charactere-erweitert/244-rektor-james-harris/file.html">Rektor James Harris</a></li>
@@ -341,19 +396,19 @@
   <details>
   <summary>Backgroundgrafiken <span>(13)</span></summary>
   <ul class="dl-list">
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=129">Bernards Haus (erweitert mit Aussenansichten, Dachboden, Keller, Garage)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=130">Maniac Mansion Villa</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=170">Maniac Mansion Villa (EGA)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=131">Jeffs Wohnung</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=132">Schule</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=133">Jeffs Haus</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=134">Verschiedene Räume (Promenade, Kanalisation, Wendys Garten)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=169">ZAK MCKRACKEN (256 Farben und EGA)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=179">DOTT-Villa komplett</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=178">Wendy Starterpack Grafiken</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=180">Kevin Starterpack Grafiken</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=181">Syd Starterpack Grafiken</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=183">Bernard DOTT Starterpack Grafiken</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=129">Bernards Haus (erweitert mit Aussenansichten, Dachboden, Keller, Garage)</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=130">Maniac Mansion Villa</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=170">Maniac Mansion Villa (EGA)</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=131">Jeffs Wohnung</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=132">Schule</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=133">Jeffs Haus</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=134">Verschiedene Räume (Promenade, Kanalisation, Wendys Garten)</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=169">ZAK MCKRACKEN (256 Farben und EGA)</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=179">DOTT-Villa komplett</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=178">Wendy Starterpack Grafiken</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=180">Kevin Starterpack Grafiken</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=181">Syd Starterpack Grafiken</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=183">Bernard DOTT Starterpack Grafiken</a><span class="date-inline">(2011-11-30)</span></li>
   </ul>
   </details>
 </section>
@@ -364,9 +419,9 @@
   <summary>Grafiken <span>(4)</span></summary>
   <ul class="dl-list">
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-sonstiges/425-maenick-maenschion-grafik-ressourcen.html">Maenick Maenschion-Grafik-Ressourcen</a></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=351">5th Maniac Birthday-Bus</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2016-09-29)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=346">Maniac Dungeon R16 &amp; R17</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2016-09-29)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=312">Ressourcen Michael-Starterpack (Zusatz)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2009-03-19)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=351">5th Maniac Birthday-Bus</a><span class="date-inline">(2016-09-29)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=346">Maniac Dungeon R16 &amp; R17</a><span class="date-inline">(2016-09-29)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=312">Ressourcen Michael-Starterpack (Zusatz)</a><span class="date-inline">(2009-03-19)</span></li>
   </ul>
   </details>
 </section>
@@ -376,9 +431,9 @@
   <details>
   <summary>Gegenstände <span>(3)</span></summary>
   <ul class="dl-list">
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=135">Inventory Items (DOTT und Monkey Island)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=136">Inventory Items (von HansaExport)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=204">Inventory Items (Indy)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=135">Inventory Items (DOTT und Monkey Island)</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=136">Inventory Items (von HansaExport)</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=204">Inventory Items (Indy)</a><span class="date-inline">(2011-11-30)</span></li>
   </ul>
   </details>
 </section>
@@ -388,8 +443,8 @@
   <details>
   <summary>Sounds <span>(2)</span></summary>
   <ul class="dl-list">
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=137">Sounds – DOTT</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=138">Sounds – Maniac Mansion</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=137">Sounds – DOTT</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=138">Sounds – Maniac Mansion</a><span class="date-inline">(2011-11-30)</span></li>
   </ul>
   </details>
 </section>
@@ -399,11 +454,11 @@
   <details>
   <summary>Musik <span>(5)</span></summary>
   <ul class="dl-list">
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=139">Musikstücke von Problem (4 XM, 2 MIDI)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2014-09-27)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=168">Musikstück von BlueGryphon (MIDI)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2014-09-27)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=184">Musik Maniac Dungeon Room 8 (XM) von Problem</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2014-09-27)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads.html?task=doc_download&gid=401">Musik Bernoulli Garten &amp; Fremder Planet (Ogg) von Problem</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2014-09-27)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads.html?task=doc_download&gid=400">Musik Bayrisches Cafe &amp; Maniac Mansion Remix (Ogg) von Problem</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2014-09-27)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=139">Musikstücke von Problem (4 XM, 2 MIDI)</a><span class="date-inline">(2014-09-27)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=168">Musikstück von BlueGryphon (MIDI)</a><span class="date-inline">(2014-09-27)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=184">Musik Maniac Dungeon Room 8 (XM) von Problem</a><span class="date-inline">(2014-09-27)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads.html?task=doc_download&gid=401">Musik Bernoulli Garten &amp; Fremder Planet (Ogg) von Problem</a><span class="date-inline">(2014-09-27)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads.html?task=doc_download&gid=400">Musik Bayrisches Cafe &amp; Maniac Mansion Remix (Ogg) von Problem</a><span class="date-inline">(2014-09-27)</span></li>
   </ul>
   </details>
 </section>
@@ -413,40 +468,40 @@
   <details>
   <summary>Ressourcen nach Episoden <span>(34)</span></summary>
   <ul class="dl-list">
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/194-episode-02-ressourcen/file.html">Episode 02 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2008-01-20)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/113-episode-08-ressourcen/file.html">Episode 08 Ressourcen (Grafiken)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-19)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/114-episode-08-making-of-powerpoint/file.html">Episode 08 Making of (Powerpoint)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/115-episode-09-ressourcen/file.html">Episode 09 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/116-episode-11-ressourcen/file.html">Episode 11 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/117-episode-13-ressourcen/file.html">Episode 13 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/118-episode-15-ressourcen/file.html">Episode 15 Ressourcen (Grafiken)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2014-09-27)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/119-episode-15-musik-xm-format/file.html">Episode 15 Musik (XM-Format)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2014-09-27)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/120-episode-22-ressourcen/file.html">Episode 22 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/124-episode-25-ressourcen/file.html">Episode 25 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/121-episode-29-ressourcen/file.html">Episode 29 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/123-episode-33-ressourcen/file.html">Episode 33 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2008-07-04)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/122-episode-39-ressourcen/file.html">Episode 39 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/125-episode-40-ressourcen/file.html">Episode 40 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/126-episode-42-ressourcen/file.html">Episode 42 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/472-episode-44-ressourcen-chars/file.html">Episode 44 – Ressourcen – Chars</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2025-01-12)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/368-episode-48-ressourcen/file.html">Episode 48 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/142-episode-51-musik-xm-format/file.html">Episode 51 Musik (XM-Format)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/127-episode-53-ressourcen/file.html">Episode 53 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/177-episode-56-ressourcen/file.html">Episode 56 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-10-22)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/201-episode-57-ressourcen/file.html">Episode 57 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2008-02-24)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/182-episode-64-ressourcen/file.html">Episode 64 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-10-22)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/203-episode-66-ressourcen/file.html">Episode 66 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2008-02-24)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/202-episode-68-ressourcen/file.html">Episode 68 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2008-02-24)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/329-episode-75-ressourcen/file.html">Episode 75 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2009-06-27)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/396-episode-89-ressourcen/file.html">Episode 89 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2014-01-01)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/418-episode-90-ressourcen/file.html">Episode 90 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/410-episode-93-ressourcen/file.html">Episode 93 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2015-04-12)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads.html?task=doc_download&gid=436">Ressourcen – Episode 31</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2018-05-27)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/290-episoden-ressourcen/file.html">Episodenpack (Ep 2,8,9,11,13,15,22,25,29,33,39,40,42,53,56,57,64,66,68,72, Halloween 2005 H03)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2008-08-28)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/128-halloween-05-03-ressourcen/file.html">Halloween 05-03 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/422-halloween-10-01-ressourcen/file.html">Halloween 10-01 Ressourcen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/205-underground-meteorhead/file.html">Underground – Meteorhead</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2008-02-24)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/431-underground-meteorhead-the-new-series/file.html">Underground – Meteorhead: The New Series</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2018-01-11)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/194-episode-02-ressourcen/file.html">Episode 02 Ressourcen</a><span class="date-inline">(2008-01-20)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/113-episode-08-ressourcen/file.html">Episode 08 Ressourcen (Grafiken)</a><span class="date-inline">(2007-04-19)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/114-episode-08-making-of-powerpoint/file.html">Episode 08 Making of (Powerpoint)</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/115-episode-09-ressourcen/file.html">Episode 09 Ressourcen</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/116-episode-11-ressourcen/file.html">Episode 11 Ressourcen</a><span class="date-inline">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/117-episode-13-ressourcen/file.html">Episode 13 Ressourcen</a><span class="date-inline">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/118-episode-15-ressourcen/file.html">Episode 15 Ressourcen (Grafiken)</a><span class="date-inline">(2014-09-27)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/119-episode-15-musik-xm-format/file.html">Episode 15 Musik (XM-Format)</a><span class="date-inline">(2014-09-27)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/120-episode-22-ressourcen/file.html">Episode 22 Ressourcen</a><span class="date-inline">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/124-episode-25-ressourcen/file.html">Episode 25 Ressourcen</a><span class="date-inline">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/121-episode-29-ressourcen/file.html">Episode 29 Ressourcen</a><span class="date-inline">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/123-episode-33-ressourcen/file.html">Episode 33 Ressourcen</a><span class="date-inline">(2008-07-04)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/122-episode-39-ressourcen/file.html">Episode 39 Ressourcen</a><span class="date-inline">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/125-episode-40-ressourcen/file.html">Episode 40 Ressourcen</a><span class="date-inline">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/126-episode-42-ressourcen/file.html">Episode 42 Ressourcen</a><span class="date-inline">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/472-episode-44-ressourcen-chars/file.html">Episode 44 – Ressourcen – Chars</a><span class="date-inline">(2025-01-12)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/368-episode-48-ressourcen/file.html">Episode 48 Ressourcen</a><span class="date-inline">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/142-episode-51-musik-xm-format/file.html">Episode 51 Musik (XM-Format)</a><span class="date-inline">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/127-episode-53-ressourcen/file.html">Episode 53 Ressourcen</a><span class="date-inline">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/177-episode-56-ressourcen/file.html">Episode 56 Ressourcen</a><span class="date-inline">(2007-10-22)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/201-episode-57-ressourcen/file.html">Episode 57 Ressourcen</a><span class="date-inline">(2008-02-24)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/182-episode-64-ressourcen/file.html">Episode 64 Ressourcen</a><span class="date-inline">(2007-10-22)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/203-episode-66-ressourcen/file.html">Episode 66 Ressourcen</a><span class="date-inline">(2008-02-24)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/202-episode-68-ressourcen/file.html">Episode 68 Ressourcen</a><span class="date-inline">(2008-02-24)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/329-episode-75-ressourcen/file.html">Episode 75 Ressourcen</a><span class="date-inline">(2009-06-27)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/396-episode-89-ressourcen/file.html">Episode 89 Ressourcen</a><span class="date-inline">(2014-01-01)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/418-episode-90-ressourcen/file.html">Episode 90 Ressourcen</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/410-episode-93-ressourcen/file.html">Episode 93 Ressourcen</a><span class="date-inline">(2015-04-12)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads.html?task=doc_download&gid=436">Ressourcen – Episode 31</a><span class="date-inline">(2018-05-27)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/290-episoden-ressourcen/file.html">Episodenpack (Ep 2,8,9,11,13,15,22,25,29,33,39,40,42,53,56,57,64,66,68,72, Halloween 2005 H03)</a><span class="date-inline">(2008-08-28)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/128-halloween-05-03-ressourcen/file.html">Halloween 05-03 Ressourcen</a><span class="date-inline">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/422-halloween-10-01-ressourcen/file.html">Halloween 10-01 Ressourcen</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/205-underground-meteorhead/file.html">Underground – Meteorhead</a><span class="date-inline">(2008-02-24)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/431-underground-meteorhead-the-new-series/file.html">Underground – Meteorhead: The New Series</a><span class="date-inline">(2018-01-11)</span></li>
   </ul>
   </details>
 </section>
@@ -457,7 +512,7 @@
   <summary>Gamesources (Komplette Projektdaten) <span>(13)</span></summary>
   <ul class="dl-list">
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/gamesources/454-mmm01-source/file.html">MMM01 (source)</a></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/gamesources/436-mmm31-source/file.html">MMM31 (source)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2018-05-27)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/gamesources/436-mmm31-source/file.html">MMM31 (source)</a><span class="date-inline">(2018-05-27)</span></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/gamesources/465-mmm31-talkie-source/file.html">MMM31 Talkie (source)</a></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/gamesources/444-mmm37-source/file.html">MMM37 (source)</a></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/gamesources/437-mmm38-source/file.html">MMM38 (source)</a></li>
@@ -479,11 +534,11 @@
   <details>
   <summary>Starterpacks International <span>(5)</span></summary>
   <ul class="dl-list">
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/398-bernard-ags321-italian/file.html">Casa Bernard AGS321 (Italiano)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2014-05-11)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/397-bernard-ags272-italian/file.html">Casa Bernard AGS272 (Italiano)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2014-05-11)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/89-starterpack-bernard-ags272-francais/file.html">La maison de Bernard pour AGS 2.72 (Français)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-03-27)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/88-starterpack-bernard-ags271-spanish/file.html">Casa de Bernard AGS271 (Español)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-07-31)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/86-starterpack-bernard-ags271-englisch/file.html">Bernard's house AGS271 (English)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-07-31)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/398-bernard-ags321-italian/file.html">Casa Bernard AGS321 (Italiano)</a><span class="date-inline">(2014-05-11)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/397-bernard-ags272-italian/file.html">Casa Bernard AGS272 (Italiano)</a><span class="date-inline">(2014-05-11)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/89-starterpack-bernard-ags272-francais/file.html">La maison de Bernard pour AGS 2.72 (Français)</a><span class="date-inline">(2007-03-27)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/88-starterpack-bernard-ags271-spanish/file.html">Casa de Bernard AGS271 (Español)</a><span class="date-inline">(2007-07-31)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/86-starterpack-bernard-ags271-englisch/file.html">Bernard's house AGS271 (English)</a><span class="date-inline">(2007-07-31)</span></li>
   </ul>
   </details>
 </section>
@@ -494,14 +549,14 @@
   <summary>Ältere Starterpacks <span>(63)</span></summary>
   <ul class="dl-list">
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/387-bernard-starterpack-ags-3-21/file.html">Bernard Starterpack AGS 3.21</a></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/389-bernard-starterpack-c64-ags-3-21/file.html">Bernard Starterpack C64 AGS 3.21</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2013-07-05)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/439-bernard-starterpack-ags-3-1/file.html">Bernard-Starterpack AGS 3.1</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2019-01-27)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/81-starterpack-bernard-dott-ags271/file.html">Bernard Starterpack DOTT Style AGS271</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-03-24)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/85-starterpack-bernard-pac-dk/file.html">Bernard Starterpack PaC-DK</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/80-starterpack-dave-ags272/file.html">Dave Starterpack AGS272</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-03-24)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/389-bernard-starterpack-c64-ags-3-21/file.html">Bernard Starterpack C64 AGS 3.21</a><span class="date-inline">(2013-07-05)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/439-bernard-starterpack-ags-3-1/file.html">Bernard-Starterpack AGS 3.1</a><span class="date-inline">(2019-01-27)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/81-starterpack-bernard-dott-ags271/file.html">Bernard Starterpack DOTT Style AGS271</a><span class="date-inline">(2007-03-24)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/85-starterpack-bernard-pac-dk/file.html">Bernard Starterpack PaC-DK</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/80-starterpack-dave-ags272/file.html">Dave Starterpack AGS272</a><span class="date-inline">(2007-03-24)</span></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/344-starterpack-dave-ags262/file.html">Starterpack Dave AGS262</a></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/143-dott-villa-starterpack-beta/file.html">DOTT Villa Starterpack (BETA)</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2018-06-26)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/358-hafen-starterpack-f/file.html">Hafen-Starterpack f</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-04-16)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/143-dott-villa-starterpack-beta/file.html">DOTT Villa Starterpack (BETA)</a><span class="date-inline">(2018-06-26)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/358-hafen-starterpack-f/file.html">Hafen-Starterpack f</a><span class="date-inline">(2007-04-16)</span></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/87-starterpack-hoagie-ags271/file.html">Starterpack Hoagie AGS271</a></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/149-starterpack-kevin-ags-272/file.html">Starterpack Kevin AGS 272</a></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/90-starterpack-maniac-dungeon-ags272/file.html">Starterpack Maniac Dungeon AGS272</a></li>
@@ -514,52 +569,52 @@
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/78-starterpack-syd-character-control-ags270/file.html">Starterpack Syd Character Control AGS270</a></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/77-starterpack-syd-achmed-ags270/file.html">Starterpack Syd-Achmed AGS270</a></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/83-starterpack-tollhaus-ags272/file.html">Starterpack Tollhaus AGS272</a></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/91-starterpack-wendy-ags271/file.html">Wendy Starterpack AGS271</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2007-03-24)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/91-starterpack-wendy-ags271/file.html">Wendy Starterpack AGS271</a><span class="date-inline">(2007-03-24)</span></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/84-starterpack-bernard-visionaire/file.html">Starterpack Bernard Visionaire</a></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/382-visionaire-starterpack-bernard-alt/file.html">Visionaire Starterpack Bernard – alt</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2018-06-26)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/383-visionaire-starterpack-dave/file.html">Visionaire Starterpack Dave</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2012-01-04)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/382-visionaire-starterpack-bernard-alt/file.html">Visionaire Starterpack Bernard – alt</a><span class="date-inline">(2018-06-26)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/383-visionaire-starterpack-dave/file.html">Visionaire Starterpack Dave</a><span class="date-inline">(2012-01-04)</span></li>
   </ul>
   <details class="sub-details">
   <summary>Ältere GitHub-Releases <span>(38)</span></summary>
   <ul class="dl-list">
-    <li><a href="https://github.com/ManiacMansionMania/Bernard-SP/releases/download/v1.4/Bernard-SP_v1_4.agt">Bernard-SP v1.4 AGS 3.5</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2020-05-10)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Bernard-SP/releases/download/v1.3/Bernard-SP.agt">Bernard-SP v1.3 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2020-04-24)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Bernard-SP/releases/download/v1.2/Bernard-SP.agt">Bernard-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2017-01-12)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Bernard-SP/releases/download/v1.1/BernardSP_v1_1.agt">Bernard-SP v1.1 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2016-09-14)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Bernard-SP/releases/download/1.0/Bernard-SP.agt">Bernard-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2015-06-26)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Dave-SP/releases/download/v1.2/Dave-SP.agt">Dave-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2020-04-25)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Dave-SP/releases/download/v1.1/Dave-SP.agt">Dave-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2017-01-15)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Dave-SP/releases/download/1.0/Dave-SP.agt">Dave-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2015-07-29)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Empty-SP/releases/download/v1.2/Empty-SP.agt">Empty-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2020-04-25)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Empty-SP/releases/download/v1.1/Empty-SP.agt">Empty-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2017-01-13)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Empty-SP/releases/download/v1.0/Empty-SP.agt">Empty-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2015-06-26)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Hoagie-SP/releases/download/v1.2/Hoagie-SP.agt">Hoagie-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2020-04-25)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Hoagie-SP/releases/download/v1.1/Hoagie-SP.agt">Hoagie-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2017-01-13)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Hoagie-SP/releases/download/1.0/Hoagie-SP.agt">Hoagie-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2015-07-29)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Kevin-SP/releases/download/v1.2/Kevin-SP.agt">Kevin-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2020-04-25)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Kevin-SP/releases/download/v1.1/Kevin-SP.agt">Kevin-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2017-01-12)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Kevin-SP/releases/download/1.0/Kevin-SP.agt">Kevin-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2015-06-26)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Maniacweed-Bernard/releases/download/v1.0/Bernard_Maniacweed_v1_0.agt">Maniacweed-Bernard v1.0 AGS 3.6.1</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2025-05-17)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Mansion-SP/releases/download/v1.2/Mansion-SP.agt">Mansion-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2020-04-25)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Mansion-SP/releases/download/v1.1/Mansion-SP.agt">Mansion-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2017-01-15)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Mansion-SP/releases/download/1.0/Mansion-SP.agt">Mansion-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2015-07-29)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Michael-SP/releases/download/v1.0/Michael-SP.agt">Michael-SP v1.0 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2020-04-25)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/PoliceMolest-SP/releases/download/v1.2/PoliceMolest-SP.agt">PoliceMolest-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2020-04-25)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/PoliceMolest-SP/releases/download/v1.1/PoliceMolest-SP.agt">PoliceMolest-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2017-01-15)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/PoliceMolest-SP/releases/download/1.0/PoliceMolest-SP.agt">PoliceMolest-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2015-07-29)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Sandy-SP/releases/download/v1.2/Sandy-SP.agt">Sandy-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2020-04-25)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Sandy-SP/releases/download/v1.1/Sandy-SP.agt">Sandy-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2017-01-12)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Sandy-SP/releases/download/1.0/Sandy-SP.agt">Sandy-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2015-07-29)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Schule-SP/releases/download/v1.2/Schule-SP.agt">Schule-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2020-04-25)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Schule-SP/releases/download/v1.1/Schule-SP.agt">Schule-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2017-01-15)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Schule-SP/releases/download/1.0/Schul-SP.agt">Schule-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2015-07-26)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Syd-Achmed-SP/releases/download/v1.3/SydAchmed-SP.agt">Syd-Achmed-SP v1.3 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2020-04-25)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Syd-Achmed-SP/releases/download/v1.2/SydAchmed-SP.agt">Syd-Achmed-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2017-01-15)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Syd-Achmed-SP/releases/download/v1.1/SydAchmed-SP.agt">Syd-Achmed-SP v1.1 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2016-09-09)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Syd-Achmed-SP/releases/download/v1.0/SydAchmed-SP.agt">Syd-Achmed-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2015-06-26)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Wendy-SP/releases/download/v1.2/Wendy-SP.agt">Wendy-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2020-04-25)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Wendy-SP/releases/download/v1.1/Wendy-SP.agt">Wendy-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2017-01-15)</span></li>
-    <li><a href="https://github.com/ManiacMansionMania/Wendy-SP/releases/download/1.0/Wendy-SP.agt">Wendy-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2015-06-26)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Bernard-SP/releases/download/v1.4/Bernard-SP_v1_4.agt">Bernard-SP v1.4 AGS 3.5</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2020-05-10)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Bernard-SP/releases/download/v1.3/Bernard-SP.agt">Bernard-SP v1.3 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2020-04-24)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Bernard-SP/releases/download/v1.2/Bernard-SP.agt">Bernard-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2017-01-12)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Bernard-SP/releases/download/v1.1/BernardSP_v1_1.agt">Bernard-SP v1.1 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2016-09-14)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Bernard-SP/releases/download/1.0/Bernard-SP.agt">Bernard-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2015-06-26)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Dave-SP/releases/download/v1.2/Dave-SP.agt">Dave-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2020-04-25)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Dave-SP/releases/download/v1.1/Dave-SP.agt">Dave-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2017-01-15)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Dave-SP/releases/download/1.0/Dave-SP.agt">Dave-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2015-07-29)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Empty-SP/releases/download/v1.2/Empty-SP.agt">Empty-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2020-04-25)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Empty-SP/releases/download/v1.1/Empty-SP.agt">Empty-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2017-01-13)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Empty-SP/releases/download/v1.0/Empty-SP.agt">Empty-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2015-06-26)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Hoagie-SP/releases/download/v1.2/Hoagie-SP.agt">Hoagie-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2020-04-25)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Hoagie-SP/releases/download/v1.1/Hoagie-SP.agt">Hoagie-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2017-01-13)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Hoagie-SP/releases/download/1.0/Hoagie-SP.agt">Hoagie-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2015-07-29)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Kevin-SP/releases/download/v1.2/Kevin-SP.agt">Kevin-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2020-04-25)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Kevin-SP/releases/download/v1.1/Kevin-SP.agt">Kevin-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2017-01-12)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Kevin-SP/releases/download/1.0/Kevin-SP.agt">Kevin-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2015-06-26)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Maniacweed-Bernard/releases/download/v1.0/Bernard_Maniacweed_v1_0.agt">Maniacweed-Bernard v1.0 AGS 3.6.1</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2025-05-17)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Mansion-SP/releases/download/v1.2/Mansion-SP.agt">Mansion-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2020-04-25)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Mansion-SP/releases/download/v1.1/Mansion-SP.agt">Mansion-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2017-01-15)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Mansion-SP/releases/download/1.0/Mansion-SP.agt">Mansion-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2015-07-29)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Michael-SP/releases/download/v1.0/Michael-SP.agt">Michael-SP v1.0 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2020-04-25)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/PoliceMolest-SP/releases/download/v1.2/PoliceMolest-SP.agt">PoliceMolest-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2020-04-25)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/PoliceMolest-SP/releases/download/v1.1/PoliceMolest-SP.agt">PoliceMolest-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2017-01-15)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/PoliceMolest-SP/releases/download/1.0/PoliceMolest-SP.agt">PoliceMolest-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2015-07-29)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Sandy-SP/releases/download/v1.2/Sandy-SP.agt">Sandy-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2020-04-25)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Sandy-SP/releases/download/v1.1/Sandy-SP.agt">Sandy-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2017-01-12)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Sandy-SP/releases/download/1.0/Sandy-SP.agt">Sandy-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2015-07-29)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Schule-SP/releases/download/v1.2/Schule-SP.agt">Schule-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2020-04-25)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Schule-SP/releases/download/v1.1/Schule-SP.agt">Schule-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2017-01-15)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Schule-SP/releases/download/1.0/Schul-SP.agt">Schule-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2015-07-26)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Syd-Achmed-SP/releases/download/v1.3/SydAchmed-SP.agt">Syd-Achmed-SP v1.3 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2020-04-25)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Syd-Achmed-SP/releases/download/v1.2/SydAchmed-SP.agt">Syd-Achmed-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2017-01-15)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Syd-Achmed-SP/releases/download/v1.1/SydAchmed-SP.agt">Syd-Achmed-SP v1.1 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2016-09-09)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Syd-Achmed-SP/releases/download/v1.0/SydAchmed-SP.agt">Syd-Achmed-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2015-06-26)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Wendy-SP/releases/download/v1.2/Wendy-SP.agt">Wendy-SP v1.2 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2020-04-25)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Wendy-SP/releases/download/v1.1/Wendy-SP.agt">Wendy-SP v1.1 AGS 3.4</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2017-01-15)</span></li>
+    <li><a href="https://github.com/ManiacMansionMania/Wendy-SP/releases/download/1.0/Wendy-SP.agt">Wendy-SP v1.0 AGS 3.3</a> <span class="badge badge-gh">GitHub</span><span class="date-inline">(2015-06-26)</span></li>
   </ul>
   </details>
   </details>
@@ -570,7 +625,7 @@
   <details>
   <summary>Audio <span>(2)</span></summary>
   <ul class="dl-list">
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/audio/420-interview-mit-edison-interactive/file.html">Interview mit Edison Interactive</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2014-09-27)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/audio/420-interview-mit-edison-interactive/file.html">Interview mit Edison Interactive</a><span class="date-inline">(2014-09-27)</span></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/audio/442-interview-mit-rocco/file.html">Interview mit Rocco</a></li>
   </ul>
   </details>
@@ -581,8 +636,8 @@
   <details>
   <summary>Tools &amp; Anleitungen <span>(5)</span></summary>
   <ul class="dl-list">
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=140">AGS-Funktionen / Script Erklärungen</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2011-11-30)</span></li>
-    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/300-anleitung-starterpack-nach-ags3-konvertieren/file.html">Anleitung: Starterpack nach AGS3 konvertieren</a><span style="color:#7a8;font-size:.75rem;margin-left:.3rem">(2023-11-15)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=140">AGS-Funktionen / Script Erklärungen</a><span class="date-inline">(2011-11-30)</span></li>
+    <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/300-anleitung-starterpack-nach-ags3-konvertieren/file.html">Anleitung: Starterpack nach AGS3 konvertieren</a><span class="date-inline">(2023-11-15)</span></li>
     <li><a href="https://github.com/ManiacMansionMania">Alle Starterpacks auf GitHub</a> <span class="badge badge-gh">GitHub</span></li>
     <li><a href="https://github.com/ManiacMansionMania/Maniacweed-Empty">Maniacweed-Empty Template (Repo, noch keine Releases)</a> <span class="badge badge-gh">GitHub</span></li>
     <li><a href="https://github.com/ManiacMansionMania/Razor-SP">Razor-SP (Repo, in Entwicklung)</a> <span class="badge badge-gh">GitHub</span></li>
@@ -590,18 +645,18 @@
   </details>
 </section>
 
-<footer style="max-width:700px;margin:3rem auto 1rem;padding:1.2rem 1.5rem;background:var(--card);border-radius:8px;color:var(--muted);font-size:.8rem;line-height:1.7;">
-  <p><strong style="color:var(--text);">Quellen</strong></p>
+<footer>
+  <p><strong>Quellen</strong></p>
   <ul style="list-style:none;margin:.4rem 0 .8rem;">
     <li>MMM Webseite – Ressourcen Dropdown Links</li>
     <li>MMM Webseite – Ressourcen Folder View Links</li>
     <li>MMM GitHub Links</li>
   </ul>
   <p>
-    <a href="https://www.maniac-mansion-mania.com" style="color:var(--link);">maniac-mansion-mania.com</a><br>
-    <a href="https://github.com/selloa/mmm-ressources" style="color:var(--link);">github.com/selloa/mmm-ressources</a>
+    <a href="https://www.maniac-mansion-mania.com">maniac-mansion-mania.com</a><br>
+    <a href="https://github.com/selloa/mmm-ressources">github.com/selloa/mmm-ressources</a>
   </p>
-  <p style="margin-top:.6rem;">selloa – 05/2026</p>
+  <p style="margin-top:.6rem;">selloa – 2026</p>
 </footer>
 
 <a href="#" class="back-top" id="backTop">&#9650; Nach oben</a>
