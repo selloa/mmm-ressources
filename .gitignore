@@ -1,0 +1,5 @@
+*.ps1
+daten/
+html-quellen/
+skripte/
+.cursor/
