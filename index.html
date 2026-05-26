@@ -188,6 +188,27 @@
     padding-bottom: 0;
     margin-bottom: .5rem;
   }
+  .intro {
+    max-width: 750px;
+    margin: 0 auto 1.5rem;
+    padding: 0 .2rem;
+    font-size: .8rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .intro p { margin-bottom: .4rem; }
+  .intro-note {
+    font-size: .75rem;
+    font-style: italic;
+    opacity: .7;
+  }
+  .cat-desc {
+    font-size: .78rem;
+    color: var(--muted);
+    margin-bottom: .8rem;
+    line-height: 1.5;
+    font-style: italic;
+  }
   .search-wrap {
     max-width: 750px;
     margin: 0 auto 1.5rem;
@@ -252,6 +273,11 @@
 <h1>Ressourcen</h1>
 <p class="subtitle">Alle Downloads auf einen Blick</p>
 
+<div class="intro">
+  <p>Charakter-Sprites, Hintergründe, Sounds, Musik, Animationen und mehr – von Episodenerstellern entwickelt und für alle bereitgestellt. Ob du eine eigene Episode starten, vorhandenes Material erweitern oder einfach Inspiration finden willst: bedien dich.</p>
+  <p class="intro-note">Bitte die Ersteller in den Credits deiner Episode nennen.</p>
+</div>
+
 <div class="search-wrap">
   <input type="text" id="search" placeholder="Downloads durchsuchen…">
 </div>
@@ -280,6 +306,7 @@
 <section class="category" id="sp-aktuell">
   <details open>
   <summary>Aktuelle Starterpacks (AGS 3.6) <span>– GitHub + Website</span></summary>
+  <p class="cat-desc">Der ideale Einstieg – enthält alles, um mit Adventure Game Studio ein eigenes Adventure zu erstellen.</p>
   <table class="sp-table">
     <tr><td><a href="https://github.com/ManiacMansionMania/Bernard-SP/releases/download/v1.5/Bernard-SP_v1_5.agt">Bernard-SP v1.5</a></td><td><span class="badge badge-gh">GitHub</span></td><td><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/148-starterpack-bernard-ags-272/file.html"><span class="badge badge-web">Web</span></a></td><td class="date">2025-06-02</td></tr>
     <tr><td><a href="https://github.com/ManiacMansionMania/Dave-SP/releases/download/v1.3/Dave-SP_v1_3.agt">Dave-SP v1.3</a></td><td><span class="badge badge-gh">GitHub</span></td><td><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/333-daves-starterpack-f/file.html"><span class="badge badge-web">Web</span></a></td><td class="date">2025-06-02</td></tr>
@@ -467,6 +494,7 @@
 <section class="category" id="episoden">
   <details>
   <summary>Ressourcen nach Episoden <span>(34)</span></summary>
+  <p class="cat-desc">Material aus bestimmten Episoden – Grafiken, Musik und mehr zum Weiterverwenden.</p>
   <ul class="dl-list">
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/194-episode-02-ressourcen/file.html">Episode 02 Ressourcen</a><span class="date-inline">(2008-01-20)</span></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-episoden/113-episode-08-ressourcen/file.html">Episode 08 Ressourcen (Grafiken)</a><span class="date-inline">(2007-04-19)</span></li>
@@ -510,6 +538,7 @@
 <section class="category" id="gamesources">
   <details>
   <summary>Gamesources (Komplette Projektdaten) <span>(13)</span></summary>
+  <p class="cat-desc">Komplette Projektdaten fertiger Episoden – zum Lernen und als Vorlage.</p>
   <ul class="dl-list">
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/gamesources/454-mmm01-source/file.html">MMM01 (source)</a></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/gamesources/436-mmm31-source/file.html">MMM31 (source)</a><span class="date-inline">(2018-05-27)</span></li>
@@ -533,6 +562,7 @@
 <section class="category" id="sp-international">
   <details>
   <summary>Starterpacks International <span>(5)</span></summary>
+  <p class="cat-desc">Starterpacks in English, Español, Italiano &amp; Français.</p>
   <ul class="dl-list">
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/398-bernard-ags321-italian/file.html">Casa Bernard AGS321 (Italiano)</a><span class="date-inline">(2014-05-11)</span></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/397-bernard-ags272-italian/file.html">Casa Bernard AGS272 (Italiano)</a><span class="date-inline">(2014-05-11)</span></li>
@@ -635,6 +665,7 @@
 <section class="category" id="tools">
   <details>
   <summary>Tools &amp; Anleitungen <span>(5)</span></summary>
+  <p class="cat-desc">Nützliche Tools und Anleitungen rund um die Episodenentwicklung.</p>
   <ul class="dl-list">
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/component/docman/?task=doc_download&gid=140">AGS-Funktionen / Script Erklärungen</a><span class="date-inline">(2011-11-30)</span></li>
     <li><a href="https://www.maniac-mansion-mania.com/index.php/de/ressourcen/downloads/ressourcen/ressourcen-starterpacks/300-anleitung-starterpack-nach-ags3-konvertieren/file.html">Anleitung: Starterpack nach AGS3 konvertieren</a><span class="date-inline">(2023-11-15)</span></li>
